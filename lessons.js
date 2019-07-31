@@ -1,3 +1,5 @@
+/* Exercise 1 */
+
 var endereco = {
     rua: "Rua dos pinheiros",
     numero: 1293,
@@ -6,36 +8,82 @@ var endereco = {
     uf: "SP"
 };
 
-function concatenate(){
-    var phrase = 'O usuário mora em ' + endereco.cidade + ' / ' 
-    + endereco.uf +' , no bairro '+endereco.bairro+', na rua "'
-    + endereco.rua +'" com nº ' + endereco.numero +'.'
+function concatenate() {
+    var phrase = 'O usuário mora em ' + endereco.cidade + ' / ' +
+        endereco.uf + ' , no bairro ' + endereco.bairro + ', na rua "' +
+        endereco.rua + '" com nº ' + endereco.numero + '.'
 
     console.log(phrase);
 }
 
 concatenate();
 
-/*
-2º exercício
-Crie uma função que dado um intervalo (entre x e y) exiba todos número pares:
-function pares(x, y) {  // código aqui } pares(32, 321);
-*/
+/* Exercise 2 */
 
-function pares(x, y) {  
-    while(x<y){
-        if(x%2==0){
+function evenNumbers(x, y) {
+    while (x <= y) {
+        if (x % 2 == 0) {
             console.log(x);
         }
-        x = x+1;
+        x = x + 1;
     }
- }
+}
 
-pares(32, 321);
+evenNumbers(32, 321);
 
-/*
-3º exercício
-Escreva uma função que verifique se o vetor de habilidades passado possui a habilidade "Javascript" e retorna um booleano true/false caso exista ou não.
-function temHabilidade(skills) {  // código aqui } var skills = ["Javascript", "ReactJS", "React Native"]; temHabilidade(skills); // true ou false
-Dica: para verificar se um vetor contém um valor, utilize o método indexOf.
-*/
+/* Exercise 3 */
+
+function haveSkills(skills) {
+
+    for (let index = 0; index < skills.length; index++) {
+        if (skills[index] == 'Javascript') {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+}
+var skills = ["Javascript", "ReactJS", "React Native"];
+var resultHabilities = haveSkills(skills);
+console.log(resultHabilities);
+
+/* Exercise 4 */
+
+function experience(anos) {
+
+    if (anos <= 1) {
+        console.log('iniciante');
+    } else if (anos <= 3) {
+        console.log('Intermediário');
+    } else if (anos <= 6) {
+        console.log('Avançado');
+    } else if (anos >= 7) {
+        console.log('Jedi Master');
+    }
+}
+
+experience(8);
+
+/* Exercise 5 */
+
+var usuarios = [{
+        nome: "Diego",
+        habilidades: ["Javascript", "ReactJS", "Redux"]
+    },
+    {
+        nome: "Gabriel",
+        habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+    }
+];
+
+function details(usuarios) {
+    for (usuario of usuarios) {
+        var joinHabilities = usuario.habilidades.join(', ');
+        var phrase = 'O usuário ' + usuario.nome + ' possui as habilidades: ' 
+        + joinHabilities;
+        console.log(phrase);
+    }
+}
+
+details(usuarios);
