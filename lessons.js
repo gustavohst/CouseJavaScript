@@ -34,14 +34,11 @@ evenNumbers(32, 321);
 /* Exercise 3 */
 
 function haveSkills(skills) {
-
-    for (let index = 0; index < skills.length; index++) {
-        if (skills[index] == 'Javascript') {
-            return true;
-        } else {
-            return false;
-        }
-
+    if (skill.indexOf("Javascript") != -1) {
+        return true;
+    }
+    else {
+        return false;
     }
 }
 var skills = ["Javascript", "ReactJS", "React Native"];
@@ -68,20 +65,20 @@ experience(8);
 /* Exercise 5 */
 
 var usuarios = [{
-        nome: "Diego",
-        habilidades: ["Javascript", "ReactJS", "Redux"]
-    },
-    {
-        nome: "Gabriel",
-        habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
-    }
+    nome: "Diego",
+    habilidades: ["Javascript", "ReactJS", "Redux"]
+},
+{
+    nome: "Gabriel",
+    habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+}
 ];
 
 function details(usuarios) {
     for (usuario of usuarios) {
         var joinHabilities = usuario.habilidades.join(', ');
-        var phrase = 'O usuário ' + usuario.nome + ' possui as habilidades: ' 
-        + joinHabilities;
+        var phrase = 'O usuário ' + usuario.nome + ' possui as habilidades: '
+            + joinHabilities;
         console.log(phrase);
     }
 }
